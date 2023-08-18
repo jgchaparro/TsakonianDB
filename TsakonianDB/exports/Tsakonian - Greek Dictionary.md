@@ -1,8 +1,8 @@
-<p style="font-family: calibri">
+<span style="font-family: calibri; font-size: 20px;">
 
 | tsakonian   | greek   | notes      |
 |:------------|:--------|:-----------|
 | έχου        | έχω     |            |
-| σατσινέ     | φετινός | -ε, -α, -ε |
 | κ̇οντούκου   | κρατάω  |            |
-</p>
+| σατσινέ     | φετινός | -ε, -α, -ε |
+</span>
