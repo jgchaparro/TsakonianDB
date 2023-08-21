@@ -6,7 +6,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Lower letters
 
-
+:*?:τσσ::τσ̇
 :*?:σ/::σ̌
 :*?:ζ/::ζ̌
 
@@ -30,3 +30,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 :*?:Μ/::Μ̇
 :*?:Ν/::Ν̇
 :*?:Λ/::Λ̣
+
+; Word workarounds
+
+:*?:τς::
+Clipboard := "τσ̇"
+Send ^v
+return
+
+:*?:ς/::
+Clipboard := "σ̌"
+Send ^v
+return
+
