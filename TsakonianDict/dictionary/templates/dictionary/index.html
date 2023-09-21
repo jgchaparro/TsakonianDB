@@ -22,7 +22,7 @@
 {% if latest_entries %}
     <ul>
     {% for entry in latest_entries %}
-        <li><a href="{% url 'dictionary:word' entry.tsakonian %}">{{ entry.tsakonian }}</a></li>
+        <li><a href="{% url 'dictionary:entry' entry.tsakonian %}">{{ entry.tsakonian }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

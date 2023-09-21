@@ -20,11 +20,19 @@ def index(request):
 
     return HttpResponse(template.render(context, request))
 
-def word(request, word):
-    # entry = Entry.objects.get(tsakonian=word)
-    # Recreate this line, but with get_object_or_404
-    entry = get_object_or_404(Entry, tsakonian=word)
-    # Extract the Greek translation from the database
+def entry(request, entry):
+    # Load the template
+    template = loader.get_template("dictionary/entry.html")
+
+    # Set the context
+    entry = get_object_or_404(Entry, tsakonian=entry)
+    tsakonian = entry
     greek = entry.greek
-    return HttpResponse(f"You're looking at word {word}. Translation: {greek}.")
+
+    context = {
+        "tsakonian": tsakonian,
+        "greek": greek,
+    }
+
+    return HttpResponse(template.render(context, request))
 
