@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
+from django.views import generic
 from .models import Entry
 
 # Create your views here.
-
+ 
 def index(request):
     # Load the template
     template = loader.get_template("dictionary/index.html")
@@ -36,3 +37,14 @@ def entry(request, entry):
 
     return HttpResponse(template.render(context, request))
 
+# class IndexView(generic.ListView):
+#     template_name = "dictionary/index.html"
+#     context_object_name = "latest_entries"
+
+#     def get_queryset(self):
+#         """Return the last five published entries."""
+#         return Entry.objects.order_by("tsakonian")
+    
+# class EntryView(generic.DetailView):
+#     model = Entry
+#     template_name = "dictionary/entry.html"
