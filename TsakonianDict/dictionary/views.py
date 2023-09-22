@@ -38,32 +38,6 @@ def entry(request, entry):
 
     return HttpResponse(template.render(context, request))
 
-def invalid_entry(request, entry):
-    # Load the template
-    template = loader.get_template("dictionary/invalid_entry.html")
-
-    # Set the context
-    context = {
-        "entry": entry,
-    }
-
-    return HttpResponse(template.render(context, request))
-
 def search(request):
-    # If the query is empty, redirect to the index page
-    if not request.GET.get('q'):
-        return redirect('/dictionary/')
-    # Otherwise, check if the entry exists in the Entry model
-    else:
-        # Load the template
-        template = loader.get_template("dictionary/search.html")
-
-        # Set the context
-        query = request.GET.get('q')
-        entries = Entry.objects.filter(tsakonian__icontains=query)
-        context = {
-            "query": query,
-            "entries": entries,
-        }
-
-        return HttpResponse(template.render(context, request))
+    query = request.GET.get('q')
+    return redirect(f'/dictionary/{query}/')
