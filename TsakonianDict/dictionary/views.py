@@ -39,5 +39,11 @@ def entry(request, entry):
     return HttpResponse(template.render(context, request))
 
 def search(request):
-    query = request.GET.get('q')
-    return redirect(f'/dictionary/{query}/')
+    # If the request is empty, go back to the main page
+    if not request.GET.get('q'):
+        return redirect('/dictionary/')
+    
+    # Otherwise, redirect to the entry page
+    else:
+        query = request.GET.get('q')
+        return redirect(f'/dictionary/{query}/')
