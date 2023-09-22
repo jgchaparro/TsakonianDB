@@ -27,9 +27,13 @@ def entry(request, entry):
     template = loader.get_template("dictionary/entry.html")
 
     # Set the context
-    entry = get_object_or_404(Entry, tsakonian=entry)
     tsakonian = entry
-    greek = entry.greek
+
+    try:
+        entry = get_object_or_404(Entry, tsakonian = tsakonian)
+        greek = entry.greek
+    except:
+        greek = "Δεν βρέθηκε η λέξη στο λεξικό."
 
     context = {
         "tsakonian": tsakonian,
