@@ -1,23 +1,30 @@
+<body>
+
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
 
-{% if latest_entries %}
-    <ul>
-    {% for entry in latest_entries %}
-        <li><a href="/dictionary/{{ entry.tsakonian }}">{{ entry.tsakonian }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>Δεν υπάρχουν όρια!</p>
-{% endif %}
+<h1>Τσακώνικο λεξικό</h1>
 
-{% if latest_entries %}
-    <ul>
-    {% for entry in latest_entries %}
-        <li><a href="{% url 'dictionary:entry' entry.tsakonian %}">{{ entry.tsakonian }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>Δεν υπάρχουν όρια!</p>
-{% endif %}
+<h2>Καούρ εκάνατε! Εγκείνι εν̇ι το πρώκιου ηλεκτρονικό Τσακώνικο λεξικό!</h2>
+
+<div class="search-bar">
+    <form method="GET" action="{% url 'dictionary:search' %}">
+      <input type="text" name="q" placeholder="Αναζήτηση">
+      <button type="submit">Υποβολή</button>
+    </form>
+  </div>
+
+<p>Αυτό το λεξικό αποτελεί μέρος των προσπαθειών συντήρησης της Τσακώνικης διαλέκτου. </p>
+
+<p>Το λεξικό αυτό είναι ανοιχτό σε όλους και όλες και οποιοσδήποτε μπορεί να συνεισφέρει στην εμπλουτισμό του.</p>
+
+</p>Αν θέλετε να συνεισφέρετε, παρακαλούμε επικοινωνήστε μαζί μας στο <a href="mailto:jgchaparro@outlook.com ">jgchaparro@outlook.com </a></p>
+
+<style>
+    .search-bar {
+      margin-bottom: 30px;
+    }
+    </style>
+
+</body>
