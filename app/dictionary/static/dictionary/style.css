@@ -49,3 +49,21 @@ body {
     background-color: #000;
   }
   
+  .translation-button {
+    background-color: #0055aa;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+  
+  }
+  
+  .translation-button:hover {
+    background-color: #fff;
+    color: #0055aa;
+  }
+
+  .translation-button:active {
+    background-color: red;
+  }

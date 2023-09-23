@@ -6,5 +6,6 @@ app_name = "dictionary"
 urlpatterns = [
     path("", views.index, name="index"),
     path("search/", views.search, name="search"),
-    path("<str:entry>/", views.entry, name="entry"),
+    path("TS-EL/<str:entry>", views.tsakonian, name="tsakonian-greek"),
+    path("EL-TS/<str:entry>", views.greek, name="greek-tsakonian"),
 ]
