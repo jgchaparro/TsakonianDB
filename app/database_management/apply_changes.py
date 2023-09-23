@@ -4,7 +4,7 @@ import sqlite3
 import pandas as pd
 
 # Connect to main database
-db_path = '../db.sqlite3'
+db_path = '../TsakonianDB.sqlite3'
 conn = sqlite3.connect(db_path)
 
 # Auxiliary functions
@@ -23,7 +23,7 @@ def query(query: str,
             print('Query executed successfully. No results to show.')
 
 # Load main dictionary
-main_df = pd.read_excel('../../TsakonianDB/tables/main.xlsx')
+main_df = pd.read_excel('../../data/tables/main.xlsx')
 
 # Copy the full dictionary into the database
 main_df.to_sql('dictionary_entry', 
