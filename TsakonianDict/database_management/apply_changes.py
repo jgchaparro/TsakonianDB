@@ -33,7 +33,7 @@ main_df.to_sql('dictionary_entry',
                dtype = {'tsakonian': 'varchar(50)',
                         'greek': 'varchar(200)',
                         'paradigm': 'varchar(5)',
-                        'source_id': 'bigint',
+                        'source_id_id': 'bigint',
                })
 
 # Delete the temporary table if it exists
@@ -56,19 +56,19 @@ CREATE TABLE dictionary_entry (
                             NOT NULL,
     greek     VARCHAR (200),
     paradigm  VARCHAR (5),
-    source    INTEGER       REFERENCES dictionary_source (id) 
+    source_id    INTEGER       REFERENCES dictionary_source (id) 
 );
 
 INSERT INTO dictionary_entry (
                                  tsakonian,
                                  greek,
                                  paradigm,
-                                 source
+                                 source_id
                              )
                              SELECT tsakonian,
                                     greek,
                                     paradigm,
-                                    source
+                                    source_id
                                FROM sqlitestudio_temp_table;
 
 DROP TABLE sqlitestudio_temp_table;

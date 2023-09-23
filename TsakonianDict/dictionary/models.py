@@ -12,10 +12,10 @@ class Source(models.Model):
         return f'{self.surname}, {self.name} ({self.year}) - {self.title}'
 
 class Entry(models.Model):
-    tsakonian = models.CharField(max_length=50)
+    tsakonian = models.CharField(max_length=50, primary_key=True)
     greek = models.CharField(max_length=200)
     paradigm = models.CharField(max_length=5)
-    source_id = models.ForeignKey(Source, on_delete=models.CASCADE)
+    source = models.ForeignKey(Source, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.tsakonian
