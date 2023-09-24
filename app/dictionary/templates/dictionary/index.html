@@ -1,54 +1,37 @@
-<head>
-  <script>
-    // Add the following JavaScript code to store the direction of the search in a hidden input field without submitting the form.
-  
-    const translationButtons = document.querySelectorAll('.translation-button');
-  
-    translationButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const direction = button.getAttribute('data-direction');
-      
-        // Update the hidden direction input field on the search form.
-        const directionInput = document.getElementById('direction');
-        directionInput.value = direction;
-      });
-    });
-  </script>
-</head>
-
-
-<body>
-
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Τσακώνικο λεξικό</title>
+  <link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
+</head>
 
-<h1>Τσακώνικο λεξικό</h1>
+<body>
+  <h1>Τσακώνικο λεξικό</h1>
 
-<h2>Καούρ εκάνατε! Εγκείνι εν̇ι το πρώκιου ηλεκτρονικό Τσακώνικο λεξικό!</h2>
+  <h2>Καούρ εκάνατε! Εγκείνι ενι το πρώκιου ηλεκτρονικό Τσακώνικο λεξικό!</h2>
 
-<div class="search-bar">
-    <form method="GET" action="{% url 'dictionary:search' %}">
-      <input type="text" name="q" placeholder="Αναζήτηση">
-      <input type="hidden" name="direction" id="direction">
-      <button type="submit">Υποβολή</button>
-    </form>
-  </div>
-  <div class="translation-buttons">
-    <button class="translation-button" type="button" data-direction="TS-EL">ΤΣ-ΕΛ</button>
-    <button class="translation-button" type="button" data-direction="EL-TS">ΕΛ-ΤΣ</button>
-  </div>
+  <form method="GET" action="{% url 'dictionary:search' %}">
+    <div class="search-direction">
+      <input type="radio" name="direction" id="direction-ts-el" value="TS-EL" checked>
+      <label for="direction-ts-el">ΤΣ-ΕΛ</label>
+  
+      <input type="radio" name="direction" id="direction-el-ts" value="EL-TS">
+      <label for="direction-el-ts">ΕΛ-ΤΣ</label>
+    </div>
+  
+    <input type="text" name="q" placeholder="Αναζήτηση">
+    <button type="submit">Υποβολή</button>
+  </form>
+  
+  
+  
+  <p>Αυτό το λεξικό αποτελεί μέρος των προσπαθειών συντήρησης της Τσακώνικης διαλέκτου. </p>
 
-<p>Αυτό το λεξικό αποτελεί μέρος των προσπαθειών συντήρησης της Τσακώνικης διαλέκτου. </p>
+  <p>Το λεξικό αυτό είναι ανοιχτό σε όλους και όλες και οποιοσδήποτε μπορεί να συνεισφέρει στην εμπλουτισμό του.</p>
 
-<p>Το λεξικό αυτό είναι ανοιχτό σε όλους και όλες και οποιοσδήποτε μπορεί να συνεισφέρει στην εμπλουτισμό του.</p>
-
-</p>Αν θέλετε να συνεισφέρετε, παρακαλούμε επικοινωνήστε μαζί μας στο <a href="mailto:jgchaparro@outlook.com ">jgchaparro@outlook.com </a></p>
-
-<style>
-    .search-bar {
-      margin-bottom: 30px;
-    }
-    </style>
+  </p>Αν θέλετε να συνεισφέρετε, παρακαλούμε επικοινωνήστε μαζί μας στο <a href="mailto:jgchaparro@outlook.com ">jgchaparro@outlook.com </a></p>
 
 </body>
+</html>

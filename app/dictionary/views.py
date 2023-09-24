@@ -94,11 +94,12 @@ def search(request):
 
     query = request.GET.get('q')
     direction = request.GET.get('direction')
+    print(direction)
 
     if not request.GET.get('q'):
         return redirect('/dictionary/')
     
     # Otherwise, redirect to the entry page
     else:
-        return redirect(f'/dictionary/EL-TS/{query}')
-        # return redirect(f'/dictionary/EL-TS/{direction}')
+        # return redirect(f'/dictionary/EL-TS/{query}')
+        return redirect(f'/dictionary/{direction}/{query}')
