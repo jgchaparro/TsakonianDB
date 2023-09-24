@@ -91,7 +91,6 @@ def greek(request, entry):
         
 def search(request):
     # If the request is empty, go back to the main page
-
     query = request.GET.get('q')
     direction = request.GET.get('direction')
     print(direction)
@@ -101,5 +100,4 @@ def search(request):
     
     # Otherwise, redirect to the entry page
     else:
-        # return redirect(f'/dictionary/EL-TS/{query}')
         return redirect(f'/dictionary/{direction}/{query}')

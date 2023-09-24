@@ -13,19 +13,20 @@
   <h2>Καούρ εκάνατε! Εγκείνι ενι το πρώκιου ηλεκτρονικό Τσακώνικο λεξικό!</h2>
 
   <form method="GET" action="{% url 'dictionary:search' %}">
-    <div class="search-direction">
+    <div class="radio-buttons">
       <input type="radio" name="direction" id="direction-ts-el" value="TS-EL" checked>
       <label for="direction-ts-el">ΤΣ-ΕΛ</label>
   
       <input type="radio" name="direction" id="direction-el-ts" value="EL-TS">
       <label for="direction-el-ts">ΕΛ-ΤΣ</label>
     </div>
+
   
-    <input type="text" name="q" placeholder="Αναζήτηση">
-    <button type="submit">Υποβολή</button>
-  </form>
-  
-  
+    <div class="search-bar">
+      <input type="text" name="q" class="search-bar" placeholder="Αναζήτηση">
+      <button type="submit">Υποβολή</button>
+    </div>
+  </form> 
   
   <p>Αυτό το λεξικό αποτελεί μέρος των προσπαθειών συντήρησης της Τσακώνικης διαλέκτου. </p>
 
