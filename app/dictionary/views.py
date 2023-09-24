@@ -100,5 +100,5 @@ def search(request):
     
     # Otherwise, redirect to the entry page
     else:
-        # query = request.GET.get('q')
         return redirect(f'/dictionary/EL-TS/{query}')
+        # return redirect(f'/dictionary/EL-TS/{direction}')
