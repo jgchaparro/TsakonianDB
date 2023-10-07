@@ -13,6 +13,7 @@ replacements = {
     'π' : 'π̇',
     'ζ' : 'ζ̌',
     'Π' : 'π̇',
+    'σ' : 'σ̌',
 }
 
 # Replace the diacritics
