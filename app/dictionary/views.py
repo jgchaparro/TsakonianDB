@@ -47,17 +47,23 @@ def tsakonian(request, entry):
     template = loader.get_template("dictionary/tsakonian.html")
 
     # Set the context
-    tsakonian = entry
+    tsakonian_ = entry
 
-    try:
-        entry = get_object_or_404(Entry, tsakonian = tsakonian)
-        greek = entry.greek
-    except:
-        greek = "Δεν βρέθηκε η λέξη στο λεξικό."
+    # Search for entries that contain the Greek word in the Greek column
+    results = Entry.objects.filter(tsakonian = tsakonian_)
 
+    # If there are results, build a list with the following format:
+    # i. Greek word
+    if results:
+       greek_list = [f'{i}) {entry.greek}' for i, entry in enumerate(results, start = 1)]
+    
+    # Otherwise, return an empty list
+    else:
+        greek_list = []
+    
     context = {
-        "tsakonian": tsakonian,
-        "greek": greek,
+        "tsakonian" : tsakonian_,
+        "greek_list": greek_list,
     }
 
     return HttpResponse(template.render(context, request))

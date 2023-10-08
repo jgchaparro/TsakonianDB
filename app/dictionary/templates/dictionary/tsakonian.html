@@ -30,6 +30,15 @@
     <div class="translation">
       <h1>{{ tsakonian }}</h1>
       <h2>Μετάφραση στα Ελληνικά:</h2>
+      {% if greek_list %}
+        {% for entry in greek_list %}
+          <p>{{ entry }}</p>
+        {% endfor %}
+      {% else %}
+        <p>Δεν βρέθηκε η λέξη στην βάση</p>
+      {% endif %}
+
+      
       <p>{{ greek }}</p>
     </div>
   </div>
