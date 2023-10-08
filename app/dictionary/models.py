@@ -14,7 +14,7 @@ class Source(models.Model):
 class Entry(models.Model):
     tsakonian = models.CharField(max_length=50, primary_key=True)
     greek = models.CharField(max_length=200)
-    paradigm = models.CharField(max_length=5)
+    paradigm_id = models.CharField(max_length=5)
     source = models.ForeignKey(Source, on_delete=models.CASCADE)
     
     def __str__(self):
