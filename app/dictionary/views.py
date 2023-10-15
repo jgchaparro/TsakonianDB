@@ -55,13 +55,7 @@ def tsakonian(request, entry):
     # If there are results, build a list with the following format:
     # i. Greek word
     if results:
-       greek_list = []
-       for i, entry in enumerate(results, start=1):
-           # If there are notes, add them to the list
-           if entry.notes is not None:
-                greek_list.append(f'{i}) [{entry.notes}] {entry.greek}')
-           else:
-                greek_list.append(f'{i}) {entry.greek}')
+       greek_list = [entry for entry in results]
     
     # Otherwise, return an empty list
     else:

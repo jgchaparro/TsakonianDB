@@ -27,20 +27,21 @@
   </form> 
   
 
-    <div class="translation">
-      <h1>{{ tsakonian }}</h1>
-      <h2>Μετάφραση στα Ελληνικά:</h2>
-      {% if greek_list %}
-        {% for entry in greek_list %}
-          <p>{{ entry }}</p>
-        {% endfor %}
-      {% else %}
-        <p>Δεν βρέθηκε η λέξη στην βάση</p>
-      {% endif %}
-
-      
-      <p>{{ greek }}</p>
-    </div>
+  <div class="translation">
+    <h1>{{ tsakonian }}</h1>
+    <h2>Μετάφραση στα Ελληνικά:</h2>
+    {% if greek_list %}
+      {% for entry in greek_list %}
+        {% if entry.notes %}
+          <p>{{ forloop.counter }}) <small><em style="color: blue;">{{ entry.notes }}</em></small> {{ entry.greek }}</p>
+        {% else %}
+          <p>{{ forloop.counter }}) {{ entry.greek }}</p>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <p>Δεν βρέθηκε η λέξη στην βάση</p>
+    {% endif %}
+  
   </div>
 </body>
 </html>
