@@ -1,4 +1,4 @@
-
+![Banner](https://raw.githubusercontent.com/jgchaparro/TsakonianDB/main/data/utils/imgs/tsakonian_sign_banner.png)
 
 # Επέκταση πληκτρολογίου για την Τσακωνική διάλεκτο
 
