@@ -8,8 +8,10 @@ Repository to compile and build materials on Tsakonian language.
 
 Contents:
 
+* A keyboard extension to write Tsakonian diacritics with a Greek keyboard: `tsakonian_keyboard_extension`
 * Tsakonian grammar tables: `data/grammar`
 * A Tsakonian dictionary: `data/tables/main.xlsx`
 * An app to browse the dictionary: `app`
+
 
 All sections are still under construction.
