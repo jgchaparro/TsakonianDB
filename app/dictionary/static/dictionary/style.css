@@ -24,7 +24,7 @@ body {
     color: #fff;
     padding: 10px;
     border-radius: 10px;
-    float: right;
+    /* float: right; */
   }
 
   h1, h2 {
