@@ -78,6 +78,15 @@ def perform_declension(word: str,
     if genitive_mark is not np.nan:
         gen_sing = stem + genitive_mark 
 
+    ### Handle irregular nouns ###
+    if '0' in paradigm:
+        try:
+            irregular_row = paradigm_master.loc[word]
+            plural = irregular_row['plural']
+            gen_sing = irregular_row['gen_sing'] if irregular_row['gen_sing'] is not np.nan else word
+        except KeyError:
+            plural = None
+
     ### Build final dictionary ###
     final_dict = {
         'nom_sing' : article_dict['nom_sing'] + ' ' + word
