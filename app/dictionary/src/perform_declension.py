@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import re
 
 def perform_declension(word: str, 
                        paradigm: str,
@@ -9,6 +10,9 @@ def perform_declension(word: str,
     based on the paradigm taxonomy described in the PDF
     Συμπυκνωμένη γραμματική της Τσακώνικης γλώσσας σε πίνακες
     """
+
+    if re.match(r'^[ΑΘΥ][1-9]$', paradigm) is None:
+        return {}
 
     ### Article ###
     article_dict_master = {
