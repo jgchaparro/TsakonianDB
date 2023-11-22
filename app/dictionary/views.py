@@ -4,6 +4,9 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.shortcuts import redirect
 from .models import Entry
+from .src.perform_declension import perform_declension
+import pandas as pd
+import numpy as np
 
 # Create your views here.
  
@@ -65,6 +68,21 @@ def tsakonian(request, entry):
         "tsakonian" : tsakonian_,
         "greek_list": greek_list,
     }
+
+    # Add the paradigm if exists
+    if results:
+        paradigm = results[0].paradigm
+        if paradigm:
+            # Read paradigm master table
+            filepath = '../data/tables/paradigms.xlsx'
+            paradigm_master = pd.read_excel(filepath).set_index('paradigm')
+
+            # Perform declension
+            declination_dict = perform_declension(results[0].tsakonian, paradigm, paradigm_master)
+
+            # Update the context
+            context.update(declination_dict)
+
 
     return HttpResponse(template.render(context, request))
 
