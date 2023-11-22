@@ -29,6 +29,7 @@
 
   <div class="translation">
     <h1>{{ tsakonian }}</h1>
+    {% if nom_plur %}
     <table style="width: 300px; border-collapse: collapse; margin: auto; text-align: center;">
       <colgroup>
         <col style="width: 100px;">
@@ -56,6 +57,7 @@
         <td>{{ acc_plur }}</td>
       </tr>
     </table>
+    {% endif %}
     
     <h2>Μετάφραση στα Ελληνικά:</h2>
     {% if greek_list %}

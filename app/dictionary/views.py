@@ -115,7 +115,7 @@ def greek(request, entry):
         
 def search(request):
     # If the request is empty, go back to the main page
-    query = request.GET.get('q')
+    query = request.GET.get('q').strip().lower()
     direction = request.GET.get('direction')
     print(direction)
 
