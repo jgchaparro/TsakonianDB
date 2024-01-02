@@ -1,0 +1,46 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Τσακώνικο λεξικό</title>
+</head>
+<body>
+  <h1>Τσακώνικο λεξικό</h1>
+
+  <form method="GET" action="{% url 'dictionary:search' %}">
+    <div class="radio-buttons">
+      <input type="radio" name="direction" id="direction-ts-el" value="TS-EL" >
+      <label for="direction-ts-el">ΤΣ-ΕΛ</label>
+  
+      <input type="radio" name="direction" id="direction-el-ts" value="EL-TS" checked>
+      <label for="direction-el-ts">ΕΛ-ΤΣ</label>
+    </div>
+
+  
+    <div class="search-bar">
+      <input type="text" name="q" class="search-bar" placeholder="Αναζήτηση">
+      <button type="submit">Υποβολή</button>
+    </div>
+  </form> 
+  
+
+<div class="translation">
+  <h1>{{ greek }}</h1>
+  <h2>Η λέξη βρέθηκε στα επόμενα Τσακώνικα όρια:</h2>
+
+  {% if tsakonian_list %}
+      {% for entry in tsakonian_list %}
+          <p>{{ entry }}</p>
+      {% endfor %}
+  {% else %}
+      <p>Δεν βρέθηκε η λέξη στην βάση</p>
+  {% endif %}
+
+  /* <p>Click <a href="{% url 'dictionary:tsakonian-general' %}ύο">here</a></p> */
+
+</div>
+</body>
+</html>

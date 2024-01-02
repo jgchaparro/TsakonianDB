@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Τσακώνικο λεξικό</title>
+</head>
+<body>
+  <h1>Τσακώνικο λεξικό</h1>
+
+<div class="search-bar">
+  <form method="GET" action="{% url 'dictionary:search' %}">
+    <input type="text" name="q" placeholder="Αναζήτηση">
+    <button type="submit">Υποβολή</button>
+  </form>
+</div>
+
+    <div class="translation">
+      <h1>{{ tsakonian }}</h1>
+
+      <p> </p>
+    </div>
+  </div>
+</body>
+</html>

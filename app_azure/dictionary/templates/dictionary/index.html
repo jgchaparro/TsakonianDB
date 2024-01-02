@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Τσακώνικο λεξικό</title>
+  <link rel="stylesheet" href="{% static 'dictionary/style.css' %}">
+</head>
+
+<body>
+  <h1>Τσακώνικο λεξικό</h1>
+
+  <h2>Καούρ εκάνατε το πρώκιου ηλεκτρονικό Τσακώνικο λεξικό!</h2>
+
+  <form method="GET" action="{% url 'dictionary:search' %}">
+    <div class="radio-buttons">
+      <input type="radio" name="direction" id="direction-ts-el" value="TS-EL" checked>
+      <label for="direction-ts-el">ΤΣ-ΕΛ</label>
+  
+      <input type="radio" name="direction" id="direction-el-ts" value="EL-TS">
+      <label for="direction-el-ts">ΕΛ-ΤΣ</label>
+    </div>
+
+  
+    <div class="search-bar">
+      <input type="text" name="q" class="search-bar" placeholder="Αναζήτηση">
+      <button type="submit">Υποβολή</button>
+    </div>
+  </form> 
+  
+  <p>Αυτό το λεξικό αποτελεί μέρος των προσπαθειών συντήρησης της Τσακώνικης διαλέκτου. </p>
+
+  <p>Το λεξικό αυτό είναι ανοιχτό σε όλους και όλες και οποιοσδήποτε μπορεί να συνεισφέρει στην εμπλουτισμό του.</p>
+
+  </p>Αν θέλετε να συνεισφέρετε, παρακαλούμε επικοινωνήστε μαζί μας στο <a href="mailto:jgchaparro@outlook.com ">jgchaparro@outlook.com </a></p>
+
+</body>
+</html>
