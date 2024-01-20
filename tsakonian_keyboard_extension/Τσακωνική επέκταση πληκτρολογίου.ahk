@@ -14,7 +14,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 :*?:π/::π̇
 :*?:κ/::κ̇
 
-:*?:ν/::ν̂
+:*?:ν/::ν̇
+:*?:νι/::ν̂
 :*?:λ/::λ̣
 
 ; Capital letters
@@ -27,7 +28,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 :*?:Π/::Π̇
 :*?:Κ/::Κ̇
 
-:*?:Ν/::Ν̂
+:*?:Ν/::Ν̇
+:*?:Νι/::Ν̂
+:*?:ΝΙ/::Ν̂
 :*?:Λ/::Λ̣
 
 ; Word workarounds
