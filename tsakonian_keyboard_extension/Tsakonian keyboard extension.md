@@ -4,7 +4,7 @@
 
 Η επέκτάση επιτρέπει την εισαγωγή των χαρακτήρων της Τσακωνικής διάλεκτου σε ένα πληκτρολόγιο της Ελληνικής γλώσσας. Η επέκταση είναι διαθέσιμη για όλα τα καινούργια πληκτρολόγια της Ελληνικής γλώσσας που υποστηρίζουν την εισαγωγή πολυτονικών χαρακτήρων.
 
-Η επέκταση βασίζεται στην εφαρμογή AutoHotKey.
+Η επέκταση βασίζεται στην ορθογραφία της Τσακωνικής διάλεκτου που προτάθηκε από τον Ιωάννη Καμβύση στο βιβλίο του _Για να κ̇οντούμε τα γρούσσα νάμου_ (Λεωνίδιο, 2020) και την εφαρμογή AutoHotKey.
 
 # Εγκατάσταση
 
@@ -12,8 +12,8 @@
    - Από την ιστοσελίδα https://www.autohotkey.com/ 
    - Πατήστε [εδώ](https://www.autohotkey.com/download/ahk-v2.exe) για να κατεβάσετε απευθείας το αρχείο εγκατάστασης.
 2) Κατεβάστε την επέκταση από έναν από τους παρακάτω συνδέσμους:
-    - [Google Drive](https://drive.google.com/file/d/1PyQNma9OCCKOIY3AZ9z9L5aST-5OHzrq/view?usp=sharing)
-    - [GitHub](https://github.com/jgchaparro/TsakonianDB/blob/main/tsakonian_keyboard_extension/Tsakonian%20keyboard%20extension.ahk)
+    - [Google Drive](https://drive.google.com/file/d/1Y2cx2Unj_ve82IgKugkwtF3eB9HIN0lg/view?usp=sharing)
+    - [GitHub](https://github.com/jgchaparro/TsakonianDB/blob/main/tsakonian_keyboard_extension/%CE%A4%CF%83%CE%B1%CE%BA%CF%89%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%B5%CF%80%CE%AD%CE%BA%CF%84%CE%B1%CF%83%CE%B7%20%CF%80%CE%BB%CE%B7%CE%BA%CF%84%CF%81%CE%BF%CE%BB%CE%BF%CE%B3%CE%AF%CE%BF%CF%85.ahk)
 3) Ανοίξτε το αρχείο επέκτασης.
 
 
@@ -34,8 +34,6 @@
 π + / → **π̇**
 
 κ + / → **κ̇**
-
-μ + / → **μ̇**
 
 ν + / → **ν̇**
 
